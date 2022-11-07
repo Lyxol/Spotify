@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
-class Artist
+class Artist extends Model
 {
-
+    private int $id_DB;
     public function __construct(
         public string $id,
 
@@ -19,6 +19,7 @@ class Artist
         public string $picture,
     )
     {
+        $this->table='artist';
     }
 
     public function getId(): string

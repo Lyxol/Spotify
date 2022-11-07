@@ -2,15 +2,18 @@
 
 namespace App\Entity;
 
-class Track
+class Track extends Model
 {
+    private int $id_DB;
     public function __construct(
         public string $id,
         public string$name,
         public array $artists,
         public string $duration
     )
-    {}
+    {
+        $this->table ='track';
+    }
 
     /**
      * @return string

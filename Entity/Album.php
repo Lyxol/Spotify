@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-class Album
+class Album extends Model
 {
+    private int $id_DB;
     public function __construct(
         public string $id,
         public string $name,
@@ -13,6 +14,7 @@ class Album
         public string $picture
     )
     {
+        $this->table='album';
     }
 
     /**
