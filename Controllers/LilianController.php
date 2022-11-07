@@ -7,8 +7,9 @@ class LilianController extends Controller
 {
     public function index()
     {
+        $apiURL = (isset($_POST['searchArtist'])) ? "https://api.spotify.com/v1/search?q=".str_replace(" ","_",$_POST['searchArtist'])."&type=artist" : "https://api.spotify.com/v1/search?q=orelsan&type=artist";
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.spotify.com/v1/search?q=orelsan&type=artist");
+        curl_setopt($ch, CURLOPT_URL, $apiURL);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $_SESSION['token']));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);

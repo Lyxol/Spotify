@@ -1,6 +1,6 @@
 <?php
 use App\Autoloader;
-use App\Entity\Artist;
+use App\Controllers\LilianController;
 Autoloader::register();
 
 ?>
@@ -16,16 +16,19 @@ Autoloader::register();
 </head>
 <body>
 <div class="row">
+    <form method="POST">
+        <input type="text" placeholder="Chercher votre artiste" name="searchArtist" class="form-control">
+        <button class="btn btn-primary">Rechercher</button>
+    </form>
     <?php
     foreach ($listArtists as $artist) {
-        //var_dump($artist);
         echo '        
         <div class="card" style="width: 18rem">
             <img src='.$artist->getPicture().' class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">'.$artist->getName().'</h5>
                 <p class="card-text">nombre de follower: <strong>'.$artist->getFollowers().'</strong></p>
-                <p class="card-text">Genre: '.$artist->getGenders()[0].'</p>
+                <p class="card-text">Genre: <strong>'.$artist->getGenders()[0].'</strong></p>
                 <a href='.$artist->getLink().'>Lien vers Spotify</a>
             </div>
         </div>';
