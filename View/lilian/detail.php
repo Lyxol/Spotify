@@ -24,6 +24,7 @@ Autoloader::register();
         ?>
     </p>
     <a href="<?= $artist->getLink()?>">Voir sur Spotify</a>
+    <h2>Album</h2>
 </main>
 </body>
 </html>
