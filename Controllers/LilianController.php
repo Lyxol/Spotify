@@ -43,7 +43,6 @@ class LilianController extends Controller
             $result = curl_exec($ch);
             curl_close($ch);
             $json_obj = json_decode($result);
-            var_dump($result);
             $img = (!empty($json_obj->images)) ? $json_obj->images[0]->url : "";
             $gender = (!empty($json_obj->genres)) ? $json_obj->genres : ["non défini"];
             $artist = New Artist(
