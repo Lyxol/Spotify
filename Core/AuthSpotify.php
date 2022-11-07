@@ -17,8 +17,8 @@ class AuthSpotify
 
         if ($newTokenNeeded) {
 
-            $clientId = "XXXXX";
-            $clientSecret = "XXXX";
+            $clientId = "5037c73bbcc24a85b5a57ab43e2ae832";
+            $clientSecret = "f610ea16001d4c718e58b5b6536dedf8";
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://accounts.spotify.com/api/token');
