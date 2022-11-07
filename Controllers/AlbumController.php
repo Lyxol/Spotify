@@ -14,7 +14,7 @@ class AlbumController extends Controller {
         $result = curl_exec($ch);
         curl_close($ch);
         $json_obj = json_decode($result);
-        //var_dump($json_obj->items);
+        //var_dump($json_obj);
         $listAlbum = array();
         $listArtist = array();
         foreach ($json_obj->items as $albums){

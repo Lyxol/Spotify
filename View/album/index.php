@@ -30,6 +30,11 @@ foreach ($listAlbum as $album){
         <p class="card-title">
         Total tracks: '.$album->getTotalTrack().'
         </p>
+        <form action="/track" method="post">
+            <input type="text" value='.$album->getId().' name="id" style="display:none">
+            <input type="text" value='.$album->getName().' name="name" style="display:none">
+            <button>Voir tracks</button>
+        </form>
     </div>
 </div>';
 }
