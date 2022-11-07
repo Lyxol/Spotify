@@ -29,7 +29,11 @@ Autoloader::register();
                 <h5 class="card-title">'.$artist->getName().'</h5>
                 <p class="card-text">nombre de follower: <strong>'.$artist->getFollowers().'</strong></p>
                 <p class="card-text">Genre: <strong>'.$artist->getGenders()[0].'</strong></p>
-                <a href='.$artist->getLink().'>Lien vers Spotify</a>
+                <!--Temporaire, A remplacer-->
+                <form action="http://localhost:8000/lilian/detail" method="post">
+                <input type="text" name="id" value='.$artist->getId().' style="display: none">
+                    <button type="submit">Voir détail</button>
+                </form>
             </div>
         </div>';
     }
