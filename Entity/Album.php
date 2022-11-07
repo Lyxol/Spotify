@@ -10,7 +10,6 @@ class Album
         public array $artist,
         public string $release_date,
         public string $total_track,
-        public string $uri,
         public string $picture
     )
     {
@@ -94,22 +93,6 @@ class Album
     public function setTotalTrack(string $total_track): void
     {
         $this->total_track = $total_track;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUri(): string
-    {
-        return $this->uri;
-    }
-
-    /**
-     * @param string $uri
-     */
-    public function setUri(string $uri): void
-    {
-        $this->uri = $uri;
     }
 
     /**

@@ -24,7 +24,10 @@ Autoloader::register();
         ?>
     </p>
     <a href="<?= $artist->getLink()?>">Voir sur Spotify</a>
-    <h2>Album</h2>
+    <form action="/album" method="post">
+        <input type="text" name="id" value="<?= $artist->getId() ?>" style="display: none">
+        <button>Voir albums</button>
+    </form>
 </main>
 </body>
 </html>

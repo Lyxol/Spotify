@@ -6,8 +6,9 @@ use App\Entity\Album;
 
 class AlbumController extends Controller {
     public function index(){
+        $idArtist = $_POST['id'];
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.spotify.com/v1/artists/2o3U0ld93tHYowkoari4Vi/albums");
+        curl_setopt($ch, CURLOPT_URL, "https://api.spotify.com/v1/artists/".$idArtist."/albums");
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $_SESSION['token']));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $result = curl_exec($ch);
@@ -27,7 +28,6 @@ class AlbumController extends Controller {
                 $listArtist,
                 $albums->release_date,
                 $albums->total_tracks,
-                $albums->uri,
                 $img
             ));
         }

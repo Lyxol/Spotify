@@ -30,7 +30,7 @@ Autoloader::register();
                 <p class="card-text">nombre de follower: <strong>'.$artist->getFollowers().'</strong></p>
                 <p class="card-text">Genre: <strong>'.$artist->getGenders()[0].'</strong></p>
                 <!--Temporaire, A remplacer-->
-                <form action="http://localhost:8000/lilian/detail" method="post">
+                <form action="/lilian/detail" method="post">
                 <input type="text" name="id" value='.$artist->getId().' style="display: none">
                     <button type="submit">Voir détail</button>
                 </form>

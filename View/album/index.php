@@ -1,5 +1,7 @@
 <?php
+use App\Autoloader;
 use App\Controllers\AlbumController;
+Autoloader::register();
 ?>
 <!doctype html>
 <html lang="fr">
@@ -28,9 +30,6 @@ foreach ($listAlbum as $album){
         <p class="card-title">
         Total tracks: '.$album->getTotalTrack().'
         </p>
-        <a href='.$album->getUri().'>
-            Lien album
-        </a>
     </div>
 </div>';
 }
