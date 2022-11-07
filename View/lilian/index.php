@@ -20,11 +20,12 @@ Autoloader::register();
     foreach ($listArtists as $artist) {
         //var_dump($artist);
         echo '        
-        <div Entity="card" style="width: 18rem">
+        <div class="card" style="width: 18rem">
             <img src='.$artist->getPicture().' class="card-img-top">
-            <div Entity="card-body">
-                <h5 Entity="card-title">'.$artist->getName().'</h5>
-                <p Entity="card-text">nombre de follower: <strong>'.$artist->getFollowers().'</strong></p>
+            <div class="card-body">
+                <h5 class="card-title">'.$artist->getName().'</h5>
+                <p class="card-text">nombre de follower: <strong>'.$artist->getFollowers().'</strong></p>
+                <p class="card-text">Genre: '.$artist->getGenders()[0].'</p>
                 <a href='.$artist->getLink().'>Lien vers Spotify</a>
             </div>
         </div>';

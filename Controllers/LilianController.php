@@ -17,11 +17,12 @@ class LilianController extends Controller
         $listArtists = array();
         foreach ($json_obj->{"artists"}->{'items'} as $item) {
             $img = (!empty($item->images)) ? $item->images[0]->{'url'} : "" ;
+            $gender = (!empty($item->genres)) ? $item->genres : ["non défini"];
             $artist = new Artist(
                 $item->{'id'},
                 $item->{'name'},
                 $item->{'followers'}->{'total'},
-                $item->genres,
+                $gender,
                 $item->{'external_urls'}->{'spotify'},
                 $img
             );
