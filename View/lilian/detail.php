@@ -16,7 +16,9 @@ Autoloader::register();
 <body>
 <main>
     <h1><?=$artist->getName()?></h1>
-    <img src="<?= $artist->getPicture()?>" class="img-fluid">
+    <div class="container-fluid" style="text-align: center">
+        <img src="<?= $artist->getPicture()?>" class="img-fluid">
+    </div>
     <p>Genres :
         <?php foreach ($artist->getGenders() as $genres){
             echo $genres.",";

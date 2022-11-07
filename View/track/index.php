@@ -13,8 +13,10 @@ Autoloader::register();
     <title>Document</title>
 </head>
 <body>
+<h1><?= $albumName ?></h1>
+<img src="<?= $albumPicture?>" class="img-fluid">
 <div class="row">
-<h1>Album de <?= $albumName ?></h1>
+
 <?php
 foreach ($listTrack as $track){
 echo '

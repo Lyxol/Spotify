@@ -8,6 +8,7 @@ class TrackController extends Controller
 {
     public function index(){
         $albumName = $_POST['name'];
+        $albumPicture = $_POST['picture'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://api.spotify.com/v1/albums/".$_POST['id']."/tracks");
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $_SESSION['token']));
@@ -28,6 +29,6 @@ class TrackController extends Controller
                 $track->duration_ms
             ));
         }
-        $this->render('/track/index',compact('listTrack','albumName'));
+        $this->render('/track/index',compact('listTrack','albumName','albumPicture'));
     }
 }

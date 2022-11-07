@@ -31,6 +31,7 @@ foreach ($listAlbum as $album){
         Total tracks: '.$album->getTotalTrack().'
         </p>
         <form action="/track" method="post">
+            <input type="text" value='.$album->getPicture().' name="picture" style="display:none">
             <input type="text" value='.$album->getId().' name="id" style="display:none">
             <input type="text" value='.$album->getName().' name="name" style="display:none">
             <button>Voir tracks</button>

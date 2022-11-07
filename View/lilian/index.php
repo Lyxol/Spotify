@@ -32,7 +32,10 @@ Autoloader::register();
                 <!--Temporaire, A remplacer-->
                 <form action="/lilian/detail" method="post">
                 <input type="text" name="id" value='.$artist->getId().' style="display: none">
-                    <button type="submit">Voir détail</button>
+                    <button type="submit">détail</button>
+                </form>
+                <form action="/lilian" method="post">
+                <button type="submit" value='.$artist->getName().'>favoris</button>
                 </form>
             </div>
         </div>';
