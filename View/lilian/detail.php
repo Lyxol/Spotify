@@ -22,7 +22,7 @@
     </p>
     <a href="<?= $artist->getLink()?>">Voir sur Spotify</a>
     <form action="/album" method="post">
-        <input type="text" name="id" value="<?= $artist->getId() ?>" style="display: none">
+        <input type="text" name="id_Spotify" value="<?= $artist->getIdSpotify() ?>" style="display: none">
         <button>Voir albums</button>
     </form>
 </main>

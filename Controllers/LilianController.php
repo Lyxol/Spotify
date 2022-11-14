@@ -34,7 +34,7 @@ class LilianController extends Controller
 
         public function detail()
         {
-            $id = $_POST['id'];
+            $id = $_POST['id_Spotify'];
             $apiURL = "https://api.spotify.com/v1/artists/".$id;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $apiURL);
