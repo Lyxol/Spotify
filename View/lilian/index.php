@@ -1,9 +1,3 @@
-<?php
-use App\Autoloader;
-use App\Controllers\LilianController;
-Autoloader::register();
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,13 +23,18 @@ Autoloader::register();
                 <h5 class="card-title">'.$artist->getName().'</h5>
                 <p class="card-text">nombre de follower: <strong>'.$artist->getFollowers().'</strong></p>
                 <p class="card-text">Genre: <strong>'.$artist->getGenders()[0].'</strong></p>
-                <!--Temporaire, A remplacer-->
                 <form action="/lilian/detail" method="post">
-                <input type="text" name="id" value='.$artist->getId().' style="display: none">
+                <input type="text" name="id_Spotify" value='.$artist->getIdSpotify().' style="display: none">
                     <button type="submit">détail</button>
                 </form>
-                <form action="/lilian" method="post">
-                <button type="submit" value='.$artist->getName().'>favoris</button>
+                <form action="/lilian/favoris" method="post">
+                    <input type="text" name="id_Spotify" value="'.$artist->getIdSpotify().'" style="display: none">
+                    <input type="text" name="name" value="'.$artist->getName().'" style="display: none">
+                    <input type="text" name="followers" value="'.$artist->getFollowers().'" style="display: none">
+                    <input type="text" name="genders" value="'.implode(',',$artist->getGenders()).'" style="display: none">
+                    <input type="text" name="link" value="'.$artist->getLink().'" style="display: none">
+                    <input type="text" name="picture" value="'.$artist->getPicture().'" style="display: none">                    
+                    <button type="submit">favoris</button>
                 </form>
             </div>
         </div>';

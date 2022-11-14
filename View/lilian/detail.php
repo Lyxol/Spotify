@@ -1,8 +1,3 @@
-<?php
-use App\Autoloader;
-use App\Controllers\LilianController;
-Autoloader::register();
-?>
 <!doctype html>
 <html lang="fr">
 <head>

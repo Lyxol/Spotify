@@ -4,9 +4,9 @@ namespace App\Entity;
 
 class Artist extends Model
 {
-    private int $id_DB;
+    public int $id = 0;
     public function __construct(
-        public string $id,
+        public string $id_Spotify,
 
         public string $name,
 
@@ -22,14 +22,14 @@ class Artist extends Model
         $this->table='artist';
     }
 
-    public function getId(): string
+    public function getIdSpotify(): string
     {
-        return $this->id;
+        return $this->id_Spotify;
     }
 
-    public function setId(string $id): self
+    public function setIdSpotify(string $id_Spotify): self
     {
-        $this->id = $id;
+        $this->id_Spotify = $id_Spotify;
         return $this;
     }
 

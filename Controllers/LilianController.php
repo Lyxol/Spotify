@@ -56,4 +56,25 @@ class LilianController extends Controller
 
             $this->render('lilian/detail',compact('artist'));
         }
+        public function favoris()
+        {
+            $artist = New Artist(
+                $_POST['id_Spotify'],
+                $_POST['name'],
+                $_POST['followers'],
+                explode(',',$_POST['genders']),
+                $_POST['link'],
+                $_POST['picture']
+            );
+            if(empty($artist->findBy(array( "id_Spotify" => $_POST['id_Spotify'])))){
+                $artist->create();
+            }
+            $listFavorites = $artist->findAll();
+            $this->render('lilian/favoris',compact('listFavorites'));
+        }
+
+        public function delete()
+        {
+
+        }
 }

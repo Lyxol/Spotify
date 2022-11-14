@@ -56,6 +56,9 @@ class Model extends Db
             if ($value !== null && $field != 'db' && $field != 'table') {
                 $fields[] = $field;
                 $inter[] = "?";
+                if(is_array($value)){
+                    $value = json_encode($value);
+                }
                 $values[] = $value;
             }
         }
@@ -81,7 +84,7 @@ class Model extends Db
                 $values[] = $value;
             }
         }
-        $values[] = $this->id;
+        $values[] = $this->id_Spotify;
 
         // On transforme le tableau "champs" en une chaine de caractères
         $fieldsList = implode(', ', $fields);
