@@ -4,11 +4,11 @@ namespace App\Entity;
 
 class Track extends Model
 {
-    private int $id_DB;
+    private int $id;
     public function __construct(
-        public string $id,
-        public string$name,
-        public array $artists,
+        public string $id_Spotify,
+        public string $name,
+        public array  $artists,
         public string $duration
     )
     {
@@ -34,17 +34,17 @@ class Track extends Model
     /**
      * @return string
      */
-    public function getId(): string
+    public function getIdSpotify(): string
     {
-        return $this->id;
+        return $this->id_Spotify;
     }
 
     /**
-     * @param string $id
+     * @param string $id_Spotify
      */
-    public function setId(string $id): void
+    public function setIdSpotify(string $id_Spotify): void
     {
-        $this->id = $id;
+        $this->id_Spotify = $id_Spotify;
     }
 
     /**

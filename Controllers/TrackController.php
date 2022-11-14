@@ -31,4 +31,29 @@ class TrackController extends Controller
         }
         $this->render('/track/index',compact('listTrack','albumName','albumPicture'));
     }
+
+    public function favoris(){
+        $track = New Track(
+            $_POST['idSpotify'],
+            $_POST['name'],
+            explode(',',$_POST['artist']),
+            $_POST['duration']
+        );
+        if(empty($track->findBy(array( "id_Spotify" => $_POST['idSpotify'])))){
+            $track->create();
+        }
+        $this->show_Favorites($track);
+    }
+
+    public function delete(){
+        $track = New Track("","",[],"");
+        $track->delete($_POST['id']);
+        $this->show_Favorites($track);
+    }
+
+    public function show_Favorites(){
+        $track = New Track("","",[],"");
+        $listFavorites = $track->findAll();
+        $this->render('track/track_Favoris',compact('listFavorites'));
+    }
 }

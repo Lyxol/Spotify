@@ -69,15 +69,19 @@ class LilianController extends Controller
             if(empty($artist->findBy(array( "id_Spotify" => $_POST['id_Spotify'])))){
                 $artist->create();
             }
-            $listFavorites = $artist->findAll();
-            $this->render('lilian/favoris',compact('listFavorites'));
+            $this->show_Favorites();
         }
 
         public function delete()
         {
             $artist = New Artist("","",0,[],"","");
             $artist->delete($_POST['id']);
+            $this->show_Favorites();
+        }
+
+        public function show_Favorites(){
+            $artist = New Artist("","",0,[],"","");
             $listFavorites = $artist->findAll();
-            $this->render('lilian/favoris',compact('listFavorites'));
+            $this->render('lilian/artiste_Favoris',compact('listFavorites'));
         }
 }
