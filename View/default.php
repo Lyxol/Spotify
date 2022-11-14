@@ -24,10 +24,7 @@
                 <a class="nav-link" href="/lilian/index">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/lilian/show_Favorites">Artite Favoris</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/track/show_Favorites">Track Favoris</a>
+                <a class="nav-link" href="/favorite/index">Favoris</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/test">Test</a>

@@ -31,7 +31,7 @@ echo '
         <p class="card-text">
         Durée : '.$track->getDuration().' ms
         </p>
-        <form action="/track/favoris" method="post">
+        <form action="/favorite/addTrack" method="post">
             <input type="text" name="idSpotify" value="'.$track->getIdSpotify().'" style="display:none">
             <input type="text" name="name" value="'.$track->getName().'" style="display:none">
             <input type="text" name="artist" value="'.implode(',',$track->getArtists()).'" style="display:none">

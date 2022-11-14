@@ -27,7 +27,7 @@
                 <input type="text" name="id_Spotify" value='.$artist->getIdSpotify().' style="display: none">
                     <button type="submit">détail</button>
                 </form>
-                <form action="/lilian/favoris" method="post">
+                <form action="/favorite/addArtist" method="post">
                     <input type="text" name="id_Spotify" value="'.$artist->getIdSpotify().'" style="display: none">
                     <input type="text" name="name" value="'.$artist->getName().'" style="display: none">
                     <input type="text" name="followers" value="'.$artist->getFollowers().'" style="display: none">
