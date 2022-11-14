@@ -75,6 +75,9 @@ class LilianController extends Controller
 
         public function delete()
         {
-
+            $artist = New Artist("","",0,[],"","");
+            $artist->delete($_POST['id']);
+            $listFavorites = $artist->findAll();
+            $this->render('lilian/favoris',compact('listFavorites'));
         }
 }
